@@ -1,0 +1,82 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/forms";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  /* font-family: "Geologica", sans-serif; */
+  font-family: "Poppins", sans-serif;
+}
+
+input::-ms-reveal,
+input::-ms-clear {
+  display: none;
+}
+
+input[type="password"]::-webkit-contacts-auto-fill-button,
+input[type="password"]::-webkit-credentials-auto-fill-button {
+  visibility: hidden;
+  display: none !important;
+  pointer-events: none;
+  height: 0;
+  width: 0;
+  margin: 0;
+}
+
+/* ANIMATIONS */
+@keyframes pulse-border {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 2px #22c55e,
+      0 0 8px 2px #22c55e66;
+  }
+  50% {
+    box-shadow:
+      0 0 0 2px #16a34a,
+      0 0 16px 4px #22c55e99;
+  }
+}
+
+@keyframes pulse-button {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 2px #22c55e,
+      0 0 8px 2px #22c55e66;
+  }
+  50% {
+    box-shadow:
+      0 0 0 2px #16a34a,
+      0 0 14px 4px #22c55e99;
+  }
+}
+
+.ready-to-convert {
+  border-radius: 6px;
+  animation: pulse-border 2s ease-in-out infinite;
+}
+
+.ready-to-convert-btn {
+  border-radius: 6px;
+  animation: pulse-button 2s ease-in-out infinite;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-focus-outline *:focus,
+.no-focus-outline *:focus-visible,
+.no-focus-outline *:focus-within {
+  outline: none !important;
+  box-shadow: none !important;
+}
